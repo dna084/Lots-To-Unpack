@@ -14,12 +14,14 @@ public class UIHandler : MonoBehaviour
     [SerializeField] public GameObject[] hpImages;
     [SerializeField] public Player player;
 
+    public bool hitCheck;
     private int imageCounter;
     private string playerSpecialType;
     private string playerSpecialBoolean;
 
     private void Start()
     {
+        hitCheck = false;
         imageCounter = 0;
         HandleUI();
     }
@@ -27,12 +29,13 @@ public class UIHandler : MonoBehaviour
     public void HandleUI()
     {
         playerMPText.text = ("Money: " + player.playerMP.ToString());
-        playerCPText.text = ("Candy: " + player.playerCP.ToString());
+        playerCPText.text = ("Coin: " + player.playerCP.ToString());
         playerSpecialText.text = ("Special: " + player.specialActive.ToString());
 
-        if (player.playerHP < 3)
+        if (hitCheck == true)
         {
             HandleHearts();
+            Debug.Log("HandleHearts() CALLED from If player.playerHP < 3");
         }
         
 
@@ -40,26 +43,28 @@ public class UIHandler : MonoBehaviour
 
     private void HandleHealing()
     {
-        if(player.playerHP < 3 && imageCounter > 0)
+        if(player.playerHP < 3 && imageCounter > 0 && hitCheck == true)
         {
             player.playerHP++;
             imageCounter--;
             hpImages[imageCounter].SetActive(true);
             Debug.Log("Health image handled!: " + imageCounter + " Health handled;" + player.playerHP );
-
+            hitCheck = false;
         }
 
     }
 
     private void HandleHearts()
     {
-        if (imageCounter < 3 && imageCounter > 0)
+        Debug.Log("HandleHearts() Entered successfully");
+        if (imageCounter < 3 && player.playerHP > 0)
         {
             hpImages[imageCounter].SetActive(false);
             imageCounter++;
+            hitCheck = false;
         }
 
-        if (player.playerHP < 0)
+        if (player.playerHP <= 0)
         {
             HandleDeath();
         }

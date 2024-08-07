@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CandyPickup : Pickup
+public class Coin : Pickup
 {
-    public int candyValue;
+    public int coinValue;
 
     public override void ApplyEffect(GameObject player)
     {
-        player.GetComponent<Player>().IncreaseCandy(candyValue);
+        player.GetComponent<Player>().IncreaseCoin(coinValue);
     }
 }

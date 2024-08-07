@@ -16,11 +16,11 @@ public class Player : MonoBehaviour
     {
         specialActive = false;
     }
-    public void IncreaseCandy(int amount)
+    public void IncreaseCoin(int amount)
     {
         playerCP += amount;
         handler.HandleUI();
-        Debug.Log("Candy increased by: " + amount);
+        Debug.Log("Coin increased by: " + amount);
     }
 
     public void IncreaseMoney(int amount)
@@ -40,7 +40,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int amount)
     {
         playerHP -= amount;
+        handler.hitCheck = true;
         handler.HandleUI();
-        Debug.Log("Health decreased by: " + amount);
+        Debug.Log("Health decreased by: " + amount + "Total HP: " + playerHP);
     }
 }
