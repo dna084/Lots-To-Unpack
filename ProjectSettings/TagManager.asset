@@ -10,6 +10,7 @@ TagManager:
   - Candy
   - Special
   - Boss
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background Details
+    uniqueID: 4049372581
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Pickups
+    uniqueID: 3547899211
+    locked: 0
+  - name: Foreground Details
+    uniqueID: 3383805963
     locked: 0

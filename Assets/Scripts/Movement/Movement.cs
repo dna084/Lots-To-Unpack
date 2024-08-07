@@ -52,12 +52,12 @@ public class Movement : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
-        if (rb.velocity.x < 0)
+        if (rb.velocity.x < 0 && isGrounded)
         {
             animator.SetFloat("xVelocity", rb.velocity.x);
         }
 
-        else
+        if(rb.velocity.x > 0 && isGrounded)
         {
             animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
         }
