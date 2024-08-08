@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     }
     public void IncreaseCoin(int amount)
     {
+        SoundEffectManager.Play("Coins");
         playerCP += amount;
         handler.HandleUI();
         Debug.Log("Coin increased by: " + amount);
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
 
     public void IncreaseMoney(int amount)
     {
+        SoundEffectManager.Play("Money");
         playerMP += amount;
         handler.HandleUI();
         Debug.Log("Money increased by: " + amount);
@@ -32,6 +34,7 @@ public class Player : MonoBehaviour
 
     public void ActivateSpecial()
     {
+        SoundEffectManager.Play("PowerUps");
         specialActive = true;
         handler.HandleUI();
         Debug.Log("Special activated");
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        SoundEffectManager.Play("Hazard");
         playerHP -= amount;
         handler.hitCheck = true;
         handler.HandleUI();

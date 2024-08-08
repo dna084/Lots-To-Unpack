@@ -27,12 +27,14 @@ public class Movement : MonoBehaviour
 
             if (isGrounded)
             {
+                SoundEffectManager.Play("Jumps");
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 animator.SetBool("isJumping", isGrounded);
             }
 
             if (doubleJump && (isGrounded == false))
             {
+                SoundEffectManager.Play("Jumps");
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 animator.SetBool("isJumping", isGrounded);
                 doubleJump = false;
