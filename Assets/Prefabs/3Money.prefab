@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7242225446185558903}
   - component: {fileID: 4605511066211893962}
   - component: {fileID: 1023688609777328439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 3Money
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 3
+  speedValue: 4.5

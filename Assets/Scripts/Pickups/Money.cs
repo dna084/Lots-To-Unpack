@@ -5,6 +5,21 @@ using UnityEngine;
 public class MoneyPickup : Pickup
 {
     [SerializeField] public int value;
+    [SerializeField] public float speedValue;
+
+    void Update()
+    {
+        transform.Translate(Vector3.left * speedValue * Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
+        if (transform.position.x <= -12)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     public override void ApplyEffect(GameObject player)
     {

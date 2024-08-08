@@ -7,24 +7,24 @@ using UnityEngine.UIElements;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
-    {
-        Debug.Log("SceneName: " + sceneName);
-        SceneManager.LoadScene(sceneName);
-    }
-
     public void QuitButton()
     {
+        Debug.Log("Game Quit!");
         Application.Quit();
     }
 
-    public void PlayButton(string buttonString)
+    public void PlayButton()
     {
-        LoadScene(buttonString);
+        SceneManager.LoadScene("Area 1");
     }
 
-    public void OptionsMenu()
+    public void HomeButton()
     {
-        //
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void TutorialButton()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 }

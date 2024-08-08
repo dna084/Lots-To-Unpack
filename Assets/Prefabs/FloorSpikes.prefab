@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4380020333816837647}
   - component: {fileID: 3309365793229790682}
   - component: {fileID: 4779327488332763340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloorSpikes
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  speedValue: 2

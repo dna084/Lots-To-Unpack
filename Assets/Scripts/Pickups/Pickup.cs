@@ -13,5 +13,10 @@ public abstract class Pickup : MonoBehaviour
             ApplyEffect(collision.gameObject);
             Destroy(this.gameObject);
         }
+
+        if (collision.CompareTag("SpawnWall"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

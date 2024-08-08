@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7734173695569739137}
   - component: {fileID: 5483857780965042808}
   - component: {fileID: 1789475065924795961}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 5Money
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 5
+  speedValue: 5

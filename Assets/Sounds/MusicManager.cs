@@ -29,7 +29,7 @@ public class MusicManager : MonoBehaviour
     {
         if (backgroundMusic != null)
         {
-            PlayBackgrounMusic(false, backgroundMusic);
+            PlayBackgroundMusic(false, backgroundMusic);
         }
 
         musicSlider.onValueChanged.AddListener(delegate { SetVolume(musicSlider.value); });
@@ -40,24 +40,24 @@ public class MusicManager : MonoBehaviour
         Instance.audioSource.volume = volume;
     }
 
-    public void PlayBackgrounMusic(bool resetSong, AudioClip audioClip = null)
+    public static void PlayBackgroundMusic(bool resetSong, AudioClip audioClip = null)
     {
         if (audioClip != null)
         {
-            audioSource.clip = audioClip;
+            Instance.audioSource.clip = audioClip;
         }
-        if (audioSource.clip != null)
+        if (Instance.audioSource.clip != null)
         {
             if (resetSong)
             {
-                audioSource.Stop();
+                Instance.audioSource.Stop();
             }
-            audioSource.Play();
+            Instance.audioSource.Play();
         }
     }
 
-    public void PauseBackgroundMusic()
+    public static void PauseBackgroundMusic()
     {
-        audioSource.Pause();
+        Instance.audioSource.Pause();
     }
 }

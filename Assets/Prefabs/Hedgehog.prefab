@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8576229404865381450}
   - component: {fileID: 3837570819622886843}
   - component: {fileID: 5785863059344489755}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hedgehog
   m_TagString: Hazard
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  speedValue: 3
 --- !u!58 &5785863059344489755
 CircleCollider2D:
   m_ObjectHideFlags: 0

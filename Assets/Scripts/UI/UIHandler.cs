@@ -13,6 +13,11 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI playerSpecialText;
     [SerializeField] public GameObject[] hpImages;
     [SerializeField] public Player player;
+    [SerializeField] public GameObject playerGameObject;
+    [SerializeField] private UnityEngine.UI.Button retryButton;
+    [SerializeField] private UnityEngine.UI.Button homeButton;
+    [SerializeField] private GameObject shaderOnDeath;
+
 
     public bool hitCheck;
     private int imageCounter;
@@ -41,15 +46,14 @@ public class UIHandler : MonoBehaviour
 
     }
 
-    private void HandleHealing()
+    public void HandleHealing()
     {
-        if(player.playerHP < 3 && imageCounter > 0 && hitCheck == true)
+        if(player.playerHP < 3)
         {
             player.playerHP++;
             imageCounter--;
             hpImages[imageCounter].SetActive(true);
             Debug.Log("Health image handled!: " + imageCounter + " Health handled;" + player.playerHP );
-            hitCheck = false;
         }
 
     }
@@ -73,6 +77,25 @@ public class UIHandler : MonoBehaviour
     public void HandleDeath()
     {
         Debug.Log("You Lost/:");
+        Time.timeScale = 0;
+        shaderOnDeath.SetActive(true);
+        MusicManager.PauseBackgroundMusic();
+
+    }
+
+    public void retryButtonClick()
+    {
+        MusicManager.PlayBackgroundMusic(false);
+        SceneManager.LoadScene("Area 1");
+    }
+
+    public void homeButtonClick()
+    {
+        MusicManager.PlayBackgroundMusic(true);
         SceneManager.LoadScene("Main Menu");
     }
+
+
+
+
 }
